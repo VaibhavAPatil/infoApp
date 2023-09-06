@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Index</a>
+        </li>
+        <li>
+          <a href="info.html">Info</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="form-container">
+      <form action="" method="">
+        <div class="input-box">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            placeholder="Enter First Name"
+            onchange="changeData(`fname`)"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            placeholder="Enter Last Name"
+            required
+            onchange="changeData(`lname`)"
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="exapmple@email.com"
+            required
+            onchange="changeData(`email`)"
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="mno">Mobile No.</label>
+          <input
+            type="text"
+            id="mno"
+            placeholder="9876543210"
+            minlength="10"
+            maxlength="10"
+            onchange="changeData(`mno`)"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="img">Upload Profile Picture</label>
+          <input
+            type="file"
+            id="img"
+            accept="image/*"
+            placeholder="Select Profile Picture"
+            onchange="changeData(`img`)"
+            required
+          />
+        </div>
+
+        <input type="submit" value="Submit" class="btn" />
+      </form>
+    </div>
+
+    <script>
+      function changeData(id) {
+        let field = document.getElementById(id).value;
+        localStorage.setItem(id, field);
+        console.log(field);
+      }
+
+      //display img
+      const imageInput = document.getElementById("img");
+
+      imageInput.addEventListener("change", (event) => {
+        // 👇️ Save the image to localStorage
+        const image = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+          localStorage.setItem("img", reader.result);
+        });
+
+        if (image) {
+          reader.readAsDataURL(image);
+        }
+
+
+      });
+    </script>
+  </body>
+</html>
