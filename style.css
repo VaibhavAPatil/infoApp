@@ -16,6 +16,7 @@ nav{
     top: 0;
     background: #f5f8ff;
     box-shadow: 1px 1px 5px #bfc2c8;
+    width:100%;
 }
 nav ul{
     display: flex;
