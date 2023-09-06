@@ -2,31 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta id="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Info</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
       <ul>
-        <li>
-          <a href="index.html">Index</a>
-        </li>
-        <li>
-          <a href="info.html">Info</a>
-        </li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="info.html">Info</a></li>
       </ul>
     </nav>
 
     <div class="form-container">
-      <form action="" method="">
+      <form>
         <div class="input-box">
           <label for="fname">First Name</label>
           <input
             type="text"
             id="fname"
             placeholder="Enter First Name"
-            onchange="changeData(`fname`)"
+            onchange="changeData('fname')"
             required
           />
         </div>
@@ -38,7 +34,7 @@
             id="lname"
             placeholder="Enter Last Name"
             required
-            onchange="changeData(`lname`)"
+            onchange="changeData('lname')"
           />
         </div>
 
@@ -47,21 +43,21 @@
           <input
             type="email"
             id="email"
-            placeholder="exapmple@email.com"
+            placeholder="example@email.com"
             required
-            onchange="changeData(`email`)"
+            onchange="changeData('email')"
           />
         </div>
 
         <div class="input-box">
           <label for="mno">Mobile No.</label>
           <input
-            type="text"
+            type="tel"
             id="mno"
             placeholder="9876543210"
             minlength="10"
             maxlength="10"
-            onchange="changeData(`mno`)"
+            onchange="changeData('mno')"
             required
           />
         </div>
@@ -72,8 +68,7 @@
             type="file"
             id="img"
             accept="image/*"
-            placeholder="Select Profile Picture"
-            onchange="changeData(`img`)"
+            onchange="changeData('img')"
             required
           />
         </div>
@@ -104,8 +99,6 @@
         if (image) {
           reader.readAsDataURL(image);
         }
-
-
       });
     </script>
   </body>
