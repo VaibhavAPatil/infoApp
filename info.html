@@ -9,12 +9,8 @@
   <body>
     <nav>
       <ul>
-        <li>
-          <a href="index.html">Index</a>
-        </li>
-        <li>
-          <a href="info.html">Info</a>
-        </li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="info.html">Info</a></li>
       </ul>
     </nav>
 
@@ -38,46 +34,27 @@
         </tr>
         <tr>
           <th>Profile Picture</th>
-          <td ><img alt="" width="200px" id="img"></td>
+          <td><img alt="Profile Picture" id="img" width="200px" /></td>
         </tr>
       </table>
     </div>
 
-
-
-
-    <!-- <script>
-      let key = "Data";
-      let info = [
-        {
-          name: "Vaibhav",
-          age: "22",
-          aadhar: "1111111111",
-          pan: "23tg445",
-        },
-        { name: "wewe", age: "22", aadhar: "1wewe1111111", pan: "23tg445" },
-      ];
-      localStorage.setItem(key, info);
-    </script> -->
-
     <script>
-        console.log(localStorage.getItem("fname"));
-        
-         // Check if "fname" is available in localStorage
-      
-        // Retrieve and update the First Name in the table
-        document.getElementById("fname").textContent = localStorage.getItem("fname");
-        document.getElementById("lname").textContent = localStorage.getItem("lname");
-        document.getElementById("email").textContent = localStorage.getItem("email");
-        document.getElementById("mno").textContent = localStorage.getItem("mno");
+      console.log(localStorage.getItem("fname"));
 
+      document.getElementById("fname").textContent =
+        localStorage.getItem("fname");
+      document.getElementById("lname").textContent =
+        localStorage.getItem("lname");
+      document.getElementById("email").textContent =
+        localStorage.getItem("email");
+      document.getElementById("mno").textContent = localStorage.getItem("mno");
 
-                // 👇️ Take the image from localStorage
-        // and display it
-        const newImage = document.getElementById("img");
+      // 👇️ Take the image from localStorage
+      // and display it
+      const newImage = document.getElementById("img");
 
-        newImage.src = localStorage.getItem("img");
-      
+      newImage.src = localStorage.getItem("img");
     </script>
   </body>
 </html>
